@@ -1,0 +1,35 @@
+/* main */
+
+#shopdone{
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-top: 110px;
+    padding-bottom: 67px;
+    background-color: #FFFAF8;
+}
+
+.shopdone-box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.shopdone-box figure {
+    margin-bottom: 25px;
+}
+
+.shopdone-box h1 {
+    font-size: 1.75rem;
+    margin-bottom: 20px;
+}
+
+.shopdone-box .btn button {
+    width: 150px;
+    height: 31px;
+    border: none;
+    background-color: var(--d59c41);
+    margin: 0 35px;
+}

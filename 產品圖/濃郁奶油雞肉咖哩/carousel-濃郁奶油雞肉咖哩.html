@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            padding-left: 10px;
+        }
+
+        #slideshow img {
+            width: 436px;
+            height: 300px;
+            object-fit: cover;
+            object-position: center;
+            box-shadow: 0px 19px 10px 2px rgb(117, 109, 109,0.25);;
+        }
+
+        /* 用途:輪播按鈕對位 */
+        .box {
+            width: 436px;
+            height: 300px;
+            position: relative;
+        }
+
+        /* 輪播導覽列 */
+
+        a {
+            text-decoration: none;
+            margin: 1px;
+        }
+
+
+        #nav {
+            width: 436px;
+            margin-top: 27px;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        #nav li {
+            width: 95px;
+            height: 86px;
+            /* margin: 8px; */
+            list-style: none;
+        }
+
+        #nav a {
+            width: 95px;
+            height: 86px;
+            /* padding: 3px; */
+            display: block;
+        }
+
+
+        
+        #nav img {
+            border: none;
+            display: block;
+            object-fit: cover;
+            object-position: center;
+        }
+        #nav a:focus {
+            outline: none;
+        }
+        ul {
+            margin: 0px;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- 圖片自動輪播 -->
+    <div class="box">
+        <div id="slideshow">
+            <img src="./1.jpeg" alt="">
+            <img src="./2.jpeg" alt="">
+            <img src="./3.jpeg" alt="">
+            <img src="./4.jpeg" alt="">
+        </div>
+
+    </div>
+    <!-- jquery -->
+    <script src="../jquery-3.7.1.min.js"></script>
+    <!-- 圖片輪播主程式 -->
+    <script src="../jquery.cycle.all.js"></script>
+    <script>
+        $(function () {
+            $('#slideshow').after('<ul id="nav">').cycle({
+                fx: 'fade',
+                timeout: 3000,
+                pager: '#nav',
+                // callback fn that creates a thumbnail to use as pager anchor
+                pagerAnchorBuilder: function (idx, slide) {
+                    return '<li><a href="#"><img src="' + slide.src + '" width="95" height="86"/></a></li>';
+                }
+            });
+        });
+    </script>
+
+</body>
+
+</html>

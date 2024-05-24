@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8" />
+    <title>註冊會員</title>
+    <script src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+
+    <!-- Don't use this in production: -->
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="./css/register.css">
+    <link rel="icon" href="./favicon.ico">
+</head>
+
+<body>
+
+
+    <div id="root"></div>
+    <script type="text/babel">
+        const { useState } = React;
+        const Topbar = () => {
+            return <>
+                <div className="topbar">
+                    <iframe src="./topbar.html" frameBorder="0" scrolling="no"></iframe>
+                </div>
+            </>
+        }
+
+        const Footer = () => {
+            return <>
+                <div className="footer">
+                    <iframe src="./footer.html" frameBorder="0" scrolling="no"></iframe>
+                </div>
+            </>
+        }
+        function MyApp() {
+            const [link, setLink] = useState('./member-log.html')
+            return <>
+                <Topbar />
+                <main>
+                    <section id="register">
+                        <div className="register-box">
+                            <h1>註冊會員</h1>
+                            <form action="">
+
+                                <div className="name">
+                                    <label htmlFor="name">會員姓名</label>
+                                    <input type="text" id="name" placeholder="王小明" />
+                                </div>
+                                <div className="email">
+                                    <label htmlFor="email">會員信箱</label>
+                                    <input type="email" id="email" placeholder="ming000@gmail.com" />
+                                </div>
+                                <div className="password">
+                                    <label htmlFor="password">會員密碼</label>
+                                    <input type="password" id="password" placeholder="密碼長度至少8個字元" />
+                                </div>
+                                <div className="tel">
+                                    <label htmlFor="tel">會員電話</label>
+                                    <input type="tel" id="tel" placeholder="09xxxxxxxx" />
+                                </div>
+                                <div className="date">
+                                    <label htmlFor="date">會員生日</label>
+                                    <input type="date" id="date" />
+                                </div>
+                                <a href={link}>
+                                    <button type="button" className="register-btn" onClick={() => {
+                                        if (document.getElementById("email").value.search(/^([a-zA-Z0-9_\.\-\+])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/) == -1) {
+                                            alert("信箱格式錯誤，請重新輸入");
+                                            setLink("./register.html");
+                                        } else if (document.getElementById("password").value.length < 8) {
+                                            alert("密碼長度過短，請重新輸入");
+                                            setLink("./register.html");
+                                        } else if (document.getElementById("tel").value.search(/^(09)[0-9]{8}$/) == -1) {
+                                            alert("電話號碼輸入錯誤，請重新輸入");
+                                            setLink("./register.html");
+                                        } else if (document.getElementById("date").value == "") {
+                                            alert("請輸入生日日期");
+                                            setLink("./register.html");
+                                        } else {
+                                            window.localStorage.setItem("name", document.getElementById("name").value);
+                                            window.localStorage.setItem("email", document.getElementById("email").value);
+                                            window.localStorage.setItem("password", document.getElementById("password").value);
+                                            window.localStorage.setItem("tel", document.getElementById("tel").value);
+                                            window.localStorage.setItem("date", document.getElementById("date").value);
+                                            window.alert("註冊成功，請至會員登入頁登入");
+                                        }
+                                    }}>註冊</button></a>
+                            </form>
+                        </div>
+                    </section>
+
+                </main>
+                <Footer />
+            </>;
+        }
+
+        const container = document.getElementById('root');
+        const root = ReactDOM.createRoot(container);
+        root.render(<MyApp />);
+    </script>
+</body>
+
+</html>

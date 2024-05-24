@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8" />
+    <title>訂單詳情</title>
+    <script src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+
+    <!-- Don't use this in production: -->
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="./css/orderinfo.css">
+    <link rel="icon" href="./favicon.ico">
+
+</head>
+
+<body>
+    <div id="root"></div>
+    <script type="text/babel">
+        const OrderRow = () => {
+            return <>
+                <div className="order-row">
+                    <div className="w359">
+                        <img src="./image/member/orderinfo-img.png" alt="" />
+                        <div className="h1">
+                            <h1>起司奶油咖哩(蛋奶素)</h1>
+                        </div>
+                    </div>
+                    <div className="discount w269">
+                        <div className="discount-banner"><p>任選優惠</p></div>
+                        <div>
+                            <p>
+                                06/01~06/30期間內<br />
+                                調理包買一送一
+                            </p>
+                        </div>
+                    </div>
+                    <div className="w208"><p>NT$100</p></div>
+                    <div className="w181 amount"><p>2</p></div>
+                    <div className="w325 total"><p>NT$100</p></div>
+                </div>
+            </>
+        }
+        const Topbar = () => {
+            return <>
+                <div className="topbar">
+                    <iframe src="./topbar.html" frameBorder="0" scrolling="no"></iframe>
+                </div>
+            </>
+        }
+
+        const Footer = () => {
+            return <>
+                <div className="footer">
+                    <iframe src="./footer.html" frameBorder="0" scrolling="no"></iframe>
+                </div>
+            </>
+        }
+        function MyApp() {
+            return <>
+                <Topbar />
+                <main>
+                    <section id="orderinfo">
+                        <div className="orderinfo-box">
+                            <h1>訂單詳情</h1>
+                            <div className="order-title-box">
+                                <div className="w359"><h2>商品資料</h2></div>
+                                <div className="w269"><h2>優惠</h2></div>
+                                <div className="w208"><h2>單件價格</h2></div>
+                                <div className="w181"><h2>數量</h2></div>
+                                <div className="w325"><h2>小計</h2></div>
+                            </div>
+                            <OrderRow />
+                            <div className="total-box">
+                                <div>
+                                    <div className="total-l"><h2>小計 :</h2></div>
+                                    <div className="total-r"><p>NT$ 1000</p></div>
+                                </div>
+                                <div>
+                                    <div className="total-l"><h2>折扣優惠 :</h2></div>
+                                    <div className="total-r"><p>NT$ 420</p></div>
+                                </div>
+                                <div>
+                                    <div className="total-l"><h2>運費 :</h2></div>
+                                    <div className="total-r"><p>NT$ 100</p></div>
+                                </div>
+                                <div>
+                                    <div className="total-l"><h2>合計 :</h2></div>
+                                    <div className="total-r"><p>NT$ 680</p></div>
+                                </div>
+                                <button>再次加入購物車</button>
+                            </div>
+
+                        </div>
+                    </section>
+                    <Footer />
+                </main>
+            </>;
+        }
+
+        const container = document.getElementById('root');
+        const root = ReactDOM.createRoot(container);
+        root.render(<MyApp />);
+    </script>
+</body>
+
+</html>

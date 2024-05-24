@@ -1,0 +1,90 @@
+/* main */
+
+/* pastorder */
+#pastorder{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 95px;
+    padding-bottom: 48px;
+    background-color: #FFFAF8;
+}
+
+.title h1 {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: var(--09302b);
+}
+
+.title {
+    display: flex;
+    width: 471px;
+    justify-content: space-between;
+    margin-bottom: 40px;
+
+}
+
+.title .separator {
+    font-size: 2.5rem;
+    font-weight: 900;
+}
+
+.title .none {
+    color: var(--9f4800);
+}
+
+.form-title-box, .row{
+    display: flex;
+}
+
+.form-title-box {
+    height: 49px;
+    background-color: var(--3b4a1f);
+    color: white;
+    font-size: 1.125rem;
+    margin-bottom: 27px;
+}
+.form-title-box div {
+    display: flex;
+    align-items: center;
+    padding-left: 9px;
+}
+
+.row div {
+    border: 1px solid rgb(0, 0, 0 ,0.5);
+    font-size: 1.125rem;
+    height: 70px;
+    padding-left: 15px ;
+    display: flex;
+    align-items: center;
+}
+
+.row div:last-child {
+    display: flex;
+    justify-content: space-between;
+    padding-right: 89px;
+    padding-left: 36px;
+}
+
+.row button {
+    height: 38px;
+    width: 150px;
+    background-color: var(--d59c41);
+    border: none;
+}
+
+.w346 {
+    width: 346px;
+}
+
+.w251 {
+    width: 251px;
+}
+
+.w239 {
+    width: 239px;
+}
+
+.w478 {
+    width: 478px;
+}

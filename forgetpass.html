@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8" />
+    <title>忘記密碼</title>
+    <script src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+
+    <!-- Don't use this in production: -->
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="./css/forgetpass.css">
+    <link rel="icon" href="./favicon.ico">
+</head>
+
+<body>
+
+    <div id="root"></div>
+    <script type="text/babel">
+        const Topbar = () => {
+            return <>
+                <div class="topbar">
+                    <iframe src="./topbar.html" frameBorder="0" scrolling="no"></iframe>
+                </div>
+            </>
+        }
+
+        const Footer = () => {
+            return <>
+                <div className="footer">
+                    <iframe src="./footer.html" frameBorder="0" scrolling="no"></iframe>
+                </div>
+            </>
+        }
+        function MyApp() {
+            return <>
+                <Topbar />
+                <main>
+                    <section id="resetpass">
+                        <h1>密碼重設</h1>
+                        <p>請輸入您註冊使用的「E-Mail帳號」<br />系統會將密碼寄到您的信箱中</p>
+                        <form action="">
+                            <div className="email">
+                                <label htmlFor="email">會員信箱</label>
+                                <input type="email" id="email" />
+                            </div>
+                        </form>
+                        <button>送出</button>
+                    </section>
+                </main>
+                <Footer />
+            </>;
+        }
+
+        const container = document.getElementById('root');
+        const root = ReactDOM.createRoot(container);
+        root.render(<MyApp />);
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,343 @@
+/* main */
+
+body {
+    background-color: #EEE6DA;
+}
+
+/* banner */
+#banner {
+    
+    width: 100%;
+    height: 550px;
+    background-image: url(./image/product/producteachcontent-banner-bk.jpg);
+    background-position: bottom;
+    background-size:auto;
+    background-repeat: no-repeat;
+    background-color: #EFE3BA;
+}
+
+/* content */
+#content {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    padding-bottom: 100px;
+}
+
+.tag-box {
+    height: 100%;
+    width: 35%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+
+.tag{
+    
+    margin-top: 132px;
+    margin-bottom: 45px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 55px 0;
+
+    background: url(./image/product/producteachcontent-tag-top.jpg),url(./image/product/producteachcontent-tag-bot.jpg);
+    background-position: top,bottom;
+    background-repeat: no-repeat;
+}
+
+.tag li {
+    margin: 7px 55px;
+    font-size: 1.125rem;
+}
+
+.tag a {
+    color: #9F4800;
+    font-weight: 600;
+    padding-bottom: 2px;
+    border-bottom: solid 2px transparent;
+    transition: 0.5s;
+}
+.tag a:hover {
+    border-bottom: 2px solid #9F4800;
+}
+
+/* RWD斷點 */
+/* 大型設備(桌機) */
+@media (min-width:821px) {}
+
+/* 中型設備(平板) */
+@media (max-width:820px) {
+    #content {
+        padding: 0;
+        flex-direction: row-reverse;
+    }
+}
+
+/* 小型設備(手機) */
+@media (max-width:640px) {}
+
+.recipe h1 {
+    width: 80px;
+    font-size: 1.25rem;
+    font-weight: bold;
+    padding-bottom: 10px;
+    border-bottom: 3px solid black ;
+    margin-bottom: 12px;
+}
+
+.topinfo {
+    width: 100%;
+    display: flex;
+    padding-top: 100px;
+    padding-left: 43px;
+}
+
+.topinfo-rwd-img{
+    display: none;
+}
+
+.buy-card {
+    padding-left: 87px;
+}
+
+.buy-card-title{
+    font-weight: bold;
+    font-size: 1.25rem;
+    color: #0D0C0C;
+    opacity: 0.8;
+    margin-bottom: 11px;
+}
+
+.buy-card small {
+    padding: 5px 7px;
+    font-size: 0.6875rem;
+    color: #800000;
+    background-color: #E7E7E7;
+    
+}
+
+.buy-card h1 {
+    margin-top: 18px;
+    font-size: 1.875rem;
+    color: #800000;
+    font-weight: bold;
+    margin-bottom: 28px;
+}
+
+.buy-number{
+    margin-top: 11px;
+    margin-bottom: 30px;
+    width: 219px;
+    height: 52px;
+    font-size: 1.125rem;
+    background-color: white;
+    border: 1px solid #DADADA;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.buy-number img:first-child,.buy-number img:last-child{
+    cursor: pointer;
+    width: 24px;
+}
+
+.buynow {
+    width: 184px;
+    height: 52px;
+    background-color: #94643C;
+    color: white;
+    border: none;
+    margin-bottom: 41px;
+}
+
+.addshop{
+    width: 184px;
+    height: 52px;
+    background-color: white;
+    border: 1px solid #DAD8D8;
+    margin-bottom: 11px;
+}
+
+.payinfo {
+    font-size: 1.125rem; 
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.content-content {
+    width: 100%;
+}
+
+/* RWD斷點 */
+/* 大型設備(桌機) */
+@media (min-width:821px) {}
+
+/* 中型設備(平板) */
+@media (max-width:820px) {
+    .content-content {
+        display: flex;
+        flex-direction: column;
+    }
+    .topinfo{
+        padding: 30px 50px;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    .buy-card {
+        padding: 0;
+    }
+}
+
+/* 小型設備(手機) */
+@media (max-width:640px) {
+    .carousel{
+        display: none;
+    }
+    #banner {
+        display: none;
+    }
+    .topinfo-rwd-img {
+        display: block;
+        width: 100%;
+        margin: 100px 0 20px 0;
+    }
+
+    /* .content-recommend div div:nth-child(n+2){
+        display: none;
+    } */
+    .content-recommend>div{
+        justify-content: center;
+    }
+    .content-contenttext{
+        width: 100%;
+    }
+    .content-contenttext h1{
+        width: 100%;
+    }
+    .content-contenttext li {
+        width: 90%;
+    }
+}
+
+.content-contenttext h1{
+    font-size: 1.125rem;
+    font-weight: bold;
+    margin-bottom: 35px;
+    margin-top: 10px;
+}
+
+.content-contenttext ul {
+    list-style-type: decimal;
+    line-height: 1.5;
+    padding-left: 50px;
+    margin-bottom: 30px;
+}
+.content-contenttext li {
+    margin-bottom: 3px;
+}
+
+.content-text-explain-title {
+    display: flex;
+    font-size: 1.25rem;
+    font-weight: bold;
+    padding-bottom: 5px;
+    border-bottom: 1px solid #BFBFBF;
+    margin-bottom: 65px;
+}
+
+.content-text-explain-title h1 {
+    margin-right: 33px;
+}
+
+.content-text-explain-img{
+    display: flex;
+    flex-direction: column;
+    padding-left: 100px;
+}
+
+.content-text-explain-img img {
+    margin-bottom: 90px
+}
+.content-recommend{
+    width: 70%;
+    margin: auto;
+}
+.content-recommend>div{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.content-recommend div div {
+    width: 278px;
+    margin: 5px 7.5px;
+    text-align: center;
+}
+
+.content-recommend div div img {
+    width: 278px;
+    height: 280px;
+    object-fit: cover;
+    object-position: center;
+    border-radius: 16px;
+    margin-bottom: 17px;
+}
+
+.content-recommend div div h2{
+    color: #09302b;
+    margin-bottom: 5px;
+}
+.content-recommend div div h1{
+    font-size: 1.25rem;
+    color: #09302b;
+}
+
+.carousel{
+    width: 450px;
+    height: 426px;
+}
+
+.carousel iframe{
+    width: 450px;
+    height: 426px;
+}
+
+@media (max-width:1050px){
+    .tag{
+        display: none;
+    }
+    .tag-box{
+        display: none;
+    }
+    .content-contenttext{
+        width: 90%;
+        margin: auto;
+    }
+}
+
+.shop-num {
+    position: fixed;
+    bottom: 10%;
+    right: 10%;
+    z-index: 99;
+}
+.shop-num a {
+    display: flex;
+    align-items: center;
+    background-color: brown;
+    color: white;
+    padding: 10px;
+    border-radius: 99px;
+}
+
+/* RWD斷點 */
+/* 大型設備(桌機) */
+@media (min-width:821px) {}
+
+/* 中型設備(平板) */
+@media (max-width:820px) {}
+
+/* 小型設備(手機) */
+@media (max-width:640px) {}

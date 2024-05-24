@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8" />
+    <title>歷史訂單</title>
+    <script src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+
+    <!-- Don't use this in production: -->
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="./css/pastorder.css">
+    <link rel="icon" href="./favicon.ico">
+</head>
+
+<body>
+    <div id="root"></div>
+    <script type="text/babel">
+        const FormRow = () => {
+            return <>
+                <div className="row">
+                    <div className="w346"><p>20230619091311179</p></div>
+                    <div className="w251"><p>2023-06-19</p></div>
+                    <div className="w239"><p>NT $600</p></div>
+                    <div className="w478"><p>已完成</p><p>2023-06-26</p><button>查閱訂單</button></div>
+                </div>
+            </>
+        }
+
+        const Topbar = () => {
+            return <>
+                <div className="topbar">
+                    <iframe src="./topbar.html" frameBorder="0" scrolling="no"></iframe>
+                </div>
+            </>
+        }
+
+        const Footer = () => {
+            return <>
+            <div className="footer">
+                    <iframe src="./footer.html" frameBorder="0" scrolling="no"></iframe>
+                </div>
+            </>
+        }
+        function MyApp() {
+            return <>
+                <Topbar />
+                <main>
+                    <section id="pastorder">
+                        <div className="title">
+                            <h1 className="none">會員資料</h1>
+                            <h1 className="separator">/</h1>
+                            <h1>歷史訂單</h1>
+                        </div>
+                        <div className="form-title-box">
+                            <div className="w346"><h1>訂單標號</h1></div>
+                            <div className="w251"><h1>訂單日期</h1></div>
+                            <div className="w239"><h1>合計金額</h1></div>
+                            <div className="w478"><h1>訂單狀態</h1></div>
+                        </div>
+                        <div className="form-box">
+                            <FormRow />
+                            <FormRow />
+                            <FormRow />
+                            <FormRow />
+                            <FormRow />
+                            <FormRow />
+                            <FormRow />
+                        </div>
+                    </section>
+                </main>
+                <Footer />
+            </>;
+        }
+
+        const container = document.getElementById('root');
+        const root = ReactDOM.createRoot(container);
+        root.render(<MyApp />);
+    </script>
+</body>
+
+</html>
